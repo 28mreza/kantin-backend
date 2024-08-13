@@ -86,7 +86,7 @@ exports.createFromCSV = async (req, res) => {
                         namaSiswa: response[x].namaSiswa,
                         tanggalLahir: response[x].tanggalLahir,
                         alamat: response[x].alamat,
-                        jenisKelamin: response[x].jeniskelamin,
+                        jenisKelamin: response[x].jenisKelamin,
                         agama: response[x].agama,
                         saldoSiswa: response[x].saldosiswa
                     })

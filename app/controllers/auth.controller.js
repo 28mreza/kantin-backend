@@ -64,16 +64,17 @@ exports.forgotPassword = async (req, res) => {
 
     await user.updateOne({ resetPasswordLink: token })
 
+    // <p> ${ process.env.CLIENT_URL } /reset-password/${ token }</p >
     const templateEmail = {
         from: 'E-Kantin',
         to: email,
         subject: 'Password Reset Link',
         html: `<p>silahkan klik dibawah untuk reset password anda</p> 
-        <p>${process.env.CLIENT_URL}/reset-password/${token}</p>`
+        <p>http://localhost:4200/reset-password/${token}</p>`
     }
     kirimEmail(templateEmail)
     return res.status(200).send({
-        status : true,
+        status: true,
         message: 'Link reset password telah dikirimkan ke email anda'
     })
 }
